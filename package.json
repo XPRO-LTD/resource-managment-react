@@ -1,0 +1,32 @@
+{
+  "name": "resource-managment-react",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XPRO-LTD/resource-managment-react.git"
+  },
+  "author": "Wojciech Telus",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/XPRO-LTD/resource-managment-react/issues"
+  },
+  "homepage": "https://github.com/XPRO-LTD/resource-managment-react#readme"
+}
