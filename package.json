@@ -19,7 +19,28 @@
     "type": "git",
     "url": "git+https://github.com/XPRO-LTD/resource-managment-react.git"
   },
-  "author": "Wojciech Telus",
+  "author": {
+    "name" : "Wojciech Telus",
+    "email" : "wojciech.telus.3005@gmail.com"
+  },
+  "contributors":[
+    {
+      "name" : "Marcin Piotr Merda",
+      "email" : "hi@exine.eu"
+    },
+    {
+      "name" : "Przemyslaw Skwierczynski",
+      "email" : "wojciech.telus.3005@gmail.com"
+    },
+    {
+      "name" : "Dima Rysanow",
+      "email" : "wojciech.telus.3005@gmail.com"
+    },
+    {
+      "name" : "Michał Taraszka",
+      "email" : "wojciech.telus.3005@gmail.com"
+    }
+  ],
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/XPRO-LTD/resource-managment-react/issues"
