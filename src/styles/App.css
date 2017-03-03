@@ -31,3 +31,23 @@ h1{
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.UserMenu {
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
+.UserMenu:hover {
+  cursor: pointer;
+}
+
+.arrowUp::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 15px;
+  margin-left: -5px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #FFF transparent;
+}
