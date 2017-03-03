@@ -4,11 +4,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RightNavBar from './components/RightNavBar';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-const style = {
-    height: '100%',
-    width: '600px',
-    float: 'right'
-};
 class App extends Component {
     constructor(props) {
         super(props);
@@ -21,8 +16,9 @@ class App extends Component {
                 <div className="App-header">
                     <h1>This is starting project!</h1>
                 </div>
-                <div className="App-intro">
-                    <div style={ style }>
+                <div style={{'display': 'flex','height': '94vh'}} className="App-intro">
+                    <div style={{'width': '67%'}}></div>
+                    <div style={{'width': '33%'}}>
                         <RightNavBar></RightNavBar>
                     </div>
                 </div>

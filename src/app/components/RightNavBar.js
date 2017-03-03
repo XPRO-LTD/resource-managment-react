@@ -2,21 +2,15 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 02.03.17.
  */
-import React from 'react';
-import {Card, CardTitle, CardText} from 'material-ui/Card';
-import {Tabs, Tab} from 'material-ui/Tabs';
-import SettingsTab from './RightNavBarTabs/SettingsTab';
-import InfoTab from './RightNavBarTabs/InfoTab';
+import React from "react";
+import {Card, CardMedia} from "material-ui/Card";
 
-const tabs = [{
-    Id: 0,
-    Title: "info",
-    Component: InfoTab,
-}, {
-    Id: 1,
-    Title: "settings",
-    Component: SettingsTab
-}];
+import AppBar from "material-ui/AppBar";
+import IconButton from "material-ui/IconButton";
+import NavigationClose from "material-ui/svg-icons/navigation/close";
+import Image from "../../../public/nature-600-337.jpg";
+import {red500} from "material-ui/styles/colors";
+import ItemDetails from "./ItemDetails";
 
 class RightNavBar extends React.Component {
     constructor(props) {
@@ -27,28 +21,20 @@ class RightNavBar extends React.Component {
 
     }
 
-    handleChange = (value) => {
-        console.log("Change state", value);
-        this.setState({
-            value: value
-        });
-    };
-
     render() {
-        const tabItems = tabs.map((tab, i) => {
-            return (
-                <Tab key={i} label={tab.Title} value={tab.Id}>{React.createElement(tab.Component)}</Tab>
-            )
-        });
         return (
-        <Card>
-            <CardTitle title="Item details" subtitle="blablabla" />
-            <CardText>
-                <Tabs value={this.state.value} initialSelectedIndex={0} onChange={this.handleChange}>
-                    {tabItems}
-                </Tabs>
-            </CardText>
-        </Card>
+            <Card zDepth={3} open={true} style={{'height':'100%'}}>
+                <AppBar
+                    title="Title"
+                    style={{'backgroundColor': red500}}
+                    iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+                ></AppBar>
+                <CardMedia>
+                    <img src={Image}/>
+                </CardMedia>
+                <ItemDetails></ItemDetails>
+            </Card>
+
         )
     }
 }
