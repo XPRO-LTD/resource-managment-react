@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
+
 import '../styles/App.css';
-import ClockContainer from './containers/ClockContainer'
+import MainArea from './components/MainArea'
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 // Needed for onTouchTap
 injectTapEventPlugin();
 
 class App extends Component {
+
+    getChildContext() {
+        return { muiTheme: getMuiTheme(baseTheme) };
+    }
+
     render() {
         return (
             <div className="App">
@@ -14,11 +24,15 @@ class App extends Component {
                     <h1>This is starting project!</h1>
                 </div>
                 <div className="App-intro">
-                    <ClockContainer></ClockContainer>
+                    <MainArea/>
                 </div>
             </div>
         );
     }
 }
+
+App.childContextTypes = {
+    muiTheme: React.PropTypes.object.isRequired,
+};
 
 export default App;
