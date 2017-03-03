@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import UserMenu from './UserMenu';
-import TextField from 'material-ui/TextField';
-import Search from 'material-ui/svg-icons/action/search'
+import SearchBar from './SearchBar'
 
 class Header extends Component {
+    SearchBarWithBackground (){
+        return <div>
+                    {"Application"}
+                    <div className="searchBackground">
+                    <SearchBar/>
+                    </div>
+                </div>
+    }
     render() {
         return (
-            <AppBar title="TITLE" titleStyle={{"font-weight": 2}}
-                    iconElementRight={<UserMenu/>}
+            <AppBar title={this.SearchBarWithBackground()}
+                    children={<UserMenu/>}
                 />
         );
     }

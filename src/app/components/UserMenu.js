@@ -34,7 +34,6 @@ class UserMenu extends Component {
         return (
             <div>
                 <Avatar className="UserMenu" src="https://s-media-cache-ak0.pinimg.com/originals/49/5e/09/495e0997e0f0682ceca2ffedddf85e06.jpg"
-
                         onClick={this.handleTouchTap}
                 />
                 <Popover style={{"margin-top": 12}} className="arrowUp"
