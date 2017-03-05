@@ -2,12 +2,12 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 02.03.17.
  */
-import React from 'react';
+import React, {Component} from 'react';
 
-class SettingsTab extends React.Component {
+class SettingsTab extends Component {
     render() {
         return (
-            <p>testSettingsTab</p>
+            <p style={{'padding': '5px'}}>testSettingsTab</p>
         );
     }
 }

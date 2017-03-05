@@ -12,7 +12,7 @@ import {red500} from "material-ui/styles/colors";
 import ItemDetails from "./ItemDetails";
 
 const appBarContextMenu = <IconButton><NavigationClose /></IconButton>;
-class RightNavBar extends React.Component {
+class RightNavBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,7 +30,7 @@ class RightNavBar extends React.Component {
                     iconElementRight={appBarContextMenu}
                 />
                 <CardMedia>
-                    <img alt="Item image" role="presentation" src={Image}/>
+                    <img alt="Item" role="presentation" src={Image}/>
                 </CardMedia>
                 <ItemDetails/>
             </Card>
