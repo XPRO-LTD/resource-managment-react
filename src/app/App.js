@@ -7,6 +7,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 class App extends Component {
     constructor(props) {
         super(props);
+        //Needed for onTouchTap
         injectTapEventPlugin();
     }
     render() {
@@ -17,9 +18,9 @@ class App extends Component {
                     <h1>This is starting project!</h1>
                 </div>
                 <div style={{'display': 'flex','height': '94vh'}} className="App-intro">
-                    <div style={{'width': '67%'}}></div>
+                    <div style={{'wgidth': '67%'}}></div>
                     <div style={{'width': '33%'}}>
-                        <RightNavBar></RightNavBar>
+                        <RightNavBar/>
                     </div>
                 </div>
             </div>

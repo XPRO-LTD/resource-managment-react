@@ -2,9 +2,8 @@
  * TCD Software
  * Created by Dmitrij Rysanow on 02.03.17.
  */
-import React from "react";
+import React, { Component } from 'react';
 import {Card, CardMedia} from "material-ui/Card";
-
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import NavigationClose from "material-ui/svg-icons/navigation/close";
@@ -12,6 +11,7 @@ import Image from "../../../public/nature-600-337.jpg";
 import {red500} from "material-ui/styles/colors";
 import ItemDetails from "./ItemDetails";
 
+const appBarContextMenu = <IconButton><NavigationClose /></IconButton>;
 class RightNavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -27,12 +27,12 @@ class RightNavBar extends React.Component {
                 <AppBar
                     title="Title"
                     style={{'backgroundColor': red500}}
-                    iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-                ></AppBar>
+                    iconElementRight={appBarContextMenu}
+                />
                 <CardMedia>
-                    <img src={Image}/>
+                    <img alt="Item image" role="presentation" src={Image}/>
                 </CardMedia>
-                <ItemDetails></ItemDetails>
+                <ItemDetails/>
             </Card>
 
         )
