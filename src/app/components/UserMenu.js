@@ -1,3 +1,4 @@
+/* github: Chestnut-Rice */
 import React, { Component } from 'react';
 import Avatar from 'material-ui/Avatar'
 import Popover, {PopoverAnimationVertical} from 'material-ui/Popover';
