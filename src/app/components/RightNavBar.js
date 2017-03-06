@@ -9,13 +9,13 @@ import AppBar from "material-ui/AppBar";
 
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconButton from 'material-ui/IconButton';
-
+import Popover from 'material-ui/Popover';
+import Menu from 'material-ui/Menu';
 import Image from "../../../public/nature-600-337.jpg";
+import MenuItem from 'material-ui/MenuItem';
 import {red500} from "material-ui/styles/colors";
 
 import ItemDetails from "./ItemDetails";
-
-const appBarContextMenu = <IconButton><MoreVertIcon /></IconButton>;
 
 const itemName = "Title";
 
@@ -23,12 +23,46 @@ class RightNavBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 0
+            value: 0,
+            optionsOpened: false
         };
-
+        this.menuOptions = [{
+            option: "delete",
+        }, {
+            option: "add"
+        }];
     }
 
+    handleTouchTap = (event) => {
+        // This prevents ghost click.
+        event.preventDefault();
+
+        this.setState({
+            open: true,
+            anchorEl: event.currentTarget,
+        });
+    };
+
+    handleRequestClose = () => {
+        this.setState({
+            open: false,
+        });
+    };
     render() {
+        const menuOptionsView = this.menuOptions.map((item, index) => {
+            return <MenuItem key={index} primaryText={item.option}/>
+        });
+        const popover = <Popover
+            open={this.state.open}
+            anchorEl={this.state.anchorEl}
+            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+            targetOrigin={{horizontal: 'left', vertical: 'top'}}
+            onRequestClose={this.handleRequestClose}
+        />;
+        const menu = <Menu>{menuOptionsView}</Menu>;
+        const appBarContextMenu = <IconButton>
+            <MoreVertIcon onTouchTap={this.handleTouchTap} />
+        </IconButton>;
         return (
             <Card zDepth={ 3 } open={ true } style={{ 'height':'100%' }}>
                 <AppBar
@@ -37,6 +71,7 @@ class RightNavBar extends Component {
                     showMenuIconButton={ false }
                     iconElementRight={ appBarContextMenu }
                 />
+                {popover}{menu}
                 <CardMedia>
                     <img alt="Item" role="presentation" src={ Image }/>
                 </CardMedia>
