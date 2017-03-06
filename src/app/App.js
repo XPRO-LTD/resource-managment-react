@@ -13,14 +13,22 @@ import FilterMenu from './components/FilterMenu'
 injectTapEventPlugin();
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showFilterMenu: false
+        };
+    }
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
     }
-
+    toggleFilterMenu() {
+        this.setState({showFilterMenu: !this.state.showFilterMenu});
+    }
     render() {
         return (
             <div>
-                <Header/>
+                <Header toggleFilterMenu={() => {this.toggleFilterMenu()}}/>
                 <div>
                     <div style={{'display': 'flex','height': '94vh'}}>
                         <div style={{'width': '67%'}}>
@@ -29,7 +37,7 @@ class App extends Component {
                             <RightNavBar/>
                         </div>
                     </div>
-                    <FilterMenu></FilterMenu>
+                    <FilterMenu showFilterMenu={this.state.showFilterMenu}/>
                 </div>
             </div>
         );
