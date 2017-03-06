@@ -1,0 +1,39 @@
+.filterMenuHeader {
+    width: 100%;
+    height: 60px;
+    background-color: #444444;
+}
+
+.closeIcon {
+    float: right;
+    margin-right: 10px;
+}
+
+.workspaceSelector {
+    width: 300px;
+    padding: 5px;
+}
+
+.drawerMenuGroupLabel {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-weight: 500;
+    float: left;
+}
+
+.tagField {
+    width: 300px;
+    padding: 5px;
+}
+
+.tagName {
+    width: 245px;
+}
+
+.tagFavorite {
+    width: 50px;
+}
+
+.drawerMenu {
+    width: auto;
+}
