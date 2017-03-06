@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -20,10 +19,10 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div>
                 <Header/>
-                <div className="App-intro">
-                    <div style={{'display': 'flex','height': '94vh'}} className="App-intro">
+                <div>
+                    <div style={{'display': 'flex','height': '94vh'}}>
                         <div style={{'width': '67%'}}>
                         </div>
                         <div style={{'width': '33%'}}>
