@@ -3,8 +3,6 @@ import Avatar from 'material-ui/Avatar'
 import Popover, {PopoverAnimationVertical} from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import TextField from 'material-ui/TextField';
-import Search from 'material-ui/svg-icons/action/search'
 
 class UserMenu extends Component {
 

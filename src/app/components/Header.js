@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
-import UserMenu from './UserMenu';
 import SearchBar from './SearchBar'
+import UserMenu from './UserMenu';
+
+import '../../styles/Header.css';
+
+const applicationName = "Application";
 
 class Header extends Component {
     SearchBarWithBackground (){
-        return <div>
-                    {"Application"}
+        return <div style={{width: "0px"}}>
+                    {applicationName}
                     <div className="searchBackground">
                     <SearchBar/>
                     </div>

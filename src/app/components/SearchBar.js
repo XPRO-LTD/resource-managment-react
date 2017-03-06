@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
-import TextField from 'material-ui/TextField';
 import Search from 'material-ui/svg-icons/action/search'
+import TextField from 'material-ui/TextField';
+
+const hintStyle = {
+    color: "white"
+};
+
+const inputStyle = {
+    width: '600px',
+    color: 'white'
+};
+
+const hintText = "Search here";
 
 class SearchBar extends Component {
     render() {
         return (
             <div className="searchBar">
                 <Search color="white" className="searchBarIcon"/>
-                <TextField underlineShow={false} hintText="Search here" hintStyle={{color: "white"}} inputStyle={{width: '600px', color: 'white'}}/>
+                <TextField underlineShow={false} hintText={hintText} hintStyle={hintStyle} inputStyle={inputStyle}/>
             </div>
         );
     }
