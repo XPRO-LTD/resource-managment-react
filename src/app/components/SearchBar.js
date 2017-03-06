@@ -1,4 +1,7 @@
-/* github: Chestnut-Rice */
+/**
+ *  github: Chestnut-Rice
+ *  Created by Przemyslaw Skwierczynski on 06.03.2017
+ **/
 import React, { Component } from 'react';
 import Search from 'material-ui/svg-icons/action/search'
 import TextField from 'material-ui/TextField';
@@ -10,6 +13,7 @@ const hintStyle = {
 };
 
 const inputStyle = {
+    //hardcoded searchbar width
     width: '600px',
     color: 'white'
 };
@@ -21,7 +25,7 @@ class SearchBar extends Component {
         return (
             <div className="searchBar">
                 <Search color="white" className="searchBarIcon"/>
-                <TextField underlineShow={false} hintText={hintText} hintStyle={hintStyle} inputStyle={inputStyle}/>
+                <TextField underlineShow={ false } hintText={ hintText } hintStyle={ hintStyle } inputStyle={ inputStyle }/>
             </div>
         );
     }

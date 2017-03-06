@@ -1,4 +1,7 @@
-/* github: Chestnut-Rice */
+/**
+ *  github: Chestnut-Rice
+ *  Created by Przemyslaw Skwierczynski on 06.03.2017
+ **/
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import SearchBar from './SearchBar'
@@ -11,17 +14,16 @@ const applicationName = "Application";
 class Header extends Component {
     SearchBarWithBackground (){
         return <div className="searchBarFix">
-                    {applicationName}
+                    { applicationName }
                     <div className="searchBackground">
-                    <SearchBar/>
+                        <SearchBar/>
                     </div>
                 </div>
     }
     render() {
         return (
             <AppBar title={this.SearchBarWithBackground()}
-                    children={<UserButton/>}
-                />
+                    children={ <UserButton/> }/>
         );
     }
 }
