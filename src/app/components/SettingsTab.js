@@ -4,6 +4,7 @@
  */
 import React, {Component} from 'react';
 
+//This is only placeholder class, used for visualization
 class SettingsTab extends Component {
     render() {
         return (

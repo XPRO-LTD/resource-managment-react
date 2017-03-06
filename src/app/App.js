@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RightNavBar from './components/RightNavBar';
+import ClockContainer from './containers/ClockContainer'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+// Needed for onTouchTap
+injectTapEventPlugin();
+
 class App extends Component {
-    constructor(props) {
-        super(props);
-        //Needed for onTouchTap
-        injectTapEventPlugin();
-    }
     render() {
         return (
-            <MuiThemeProvider>
             <div className="App">
                 <div className="App-header">
                     <h1>This is starting project!</h1>
                 </div>
-                <div style={{'display': 'flex','height': '94vh'}} className="App-intro">
-                    <div style={{'wgidth': '67%'}}></div>
-                    <div style={{'width': '33%'}}>
-                        <RightNavBar/>
-                    </div>
+                <div className="App-intro">
+                    <ClockContainer></ClockContainer>
                 </div>
             </div>
-            </MuiThemeProvider>
         );
     }
 }
