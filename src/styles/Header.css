@@ -1,0 +1,16 @@
+/**
+ *  github: Chestnut-Rice
+ *  Created by Przemyslaw Skwierczynski on 06.03.2017
+ **/
+.searchBarFix {
+    width: 0px
+}
+
+.searchBackground {
+    display: inline-block;
+    margin-left: 250px;
+    background-color: rgba(125, 125, 125, 0.2);
+    width: 650px;
+    padding: 0px 20px;
+    font-weight: 200;
+}
