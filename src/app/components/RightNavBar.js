@@ -3,14 +3,22 @@
  * Created by Dmitrij Rysanow on 02.03.17.
  */
 import React, { Component } from 'react';
+
 import {Card, CardMedia} from "material-ui/Card";
 import AppBar from "material-ui/AppBar";
-import MoreVert from "material-ui/MoreVert";
+
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import IconButton from 'material-ui/IconButton';
+
 import Image from "../../../public/nature-600-337.jpg";
 import {red500} from "material-ui/styles/colors";
+
 import ItemDetails from "./ItemDetails";
 
-const appBarContextMenu = <IconButton><MoreVert /></IconButton>;
+const appBarContextMenu = <IconButton><MoreVertIcon /></IconButton>;
+
+const itemName = "Title";
+
 class RightNavBar extends Component {
     constructor(props) {
         super(props);
@@ -22,14 +30,15 @@ class RightNavBar extends Component {
 
     render() {
         return (
-            <Card zDepth={3} open={true} style={{'height':'100%'}}>
+            <Card zDepth={ 3 } open={ true } style={{ 'height':'100%' }}>
                 <AppBar
-                    title="Title"
+                    title={ itemName }
                     style={{'backgroundColor': red500}}
-                    iconElementRight={appBarContextMenu}
+                    showMenuIconButton={ false }
+                    iconElementRight={ appBarContextMenu }
                 />
                 <CardMedia>
-                    <img alt="Item" role="presentation" src={Image}/>
+                    <img alt="Item" role="presentation" src={ Image }/>
                 </CardMedia>
                 <ItemDetails/>
             </Card>
