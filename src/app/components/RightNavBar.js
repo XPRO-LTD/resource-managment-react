@@ -52,17 +52,18 @@ class RightNavBar extends Component {
         const menuOptionsView = this.menuOptions.map((item, index) => {
             return <MenuItem key={index} primaryText={item.option}/>
         });
+        const appBarContextMenu = <IconButton>
+            <MoreVertIcon onTouchTap={this.handleTouchTap} />
+        </IconButton>;
+        const menu = <Menu>{menuOptionsView}</Menu>;
         const popover = <Popover
             open={this.state.open}
             anchorEl={this.state.anchorEl}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
             targetOrigin={{horizontal: 'left', vertical: 'top'}}
             onRequestClose={this.handleRequestClose}
-        />;
-        const menu = <Menu>{menuOptionsView}</Menu>;
-        const appBarContextMenu = <IconButton>
-            <MoreVertIcon onTouchTap={this.handleTouchTap} />
-        </IconButton>;
+        >{menu}</Popover>;
+
         return (
             <Card zDepth={ 3 } open={ true } style={{ 'height':'100%' }}>
                 <AppBar
@@ -71,7 +72,7 @@ class RightNavBar extends Component {
                     showMenuIconButton={ false }
                     iconElementRight={ appBarContextMenu }
                 />
-                {popover}{menu}
+                {popover}
                 <CardMedia>
                     <img alt="Item" role="presentation" src={ Image }/>
                 </CardMedia>
