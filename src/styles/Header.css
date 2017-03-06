@@ -1,22 +1,6 @@
 /* github: Chestnut-Rice */
-.UserMenu {
-    margin-top: 12px;
-    margin-right: 5px;
-}
-
-.UserMenu:hover {
-    cursor: pointer;
-}
-
-.arrowUp::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    right: 15px;
-    margin-left: -5px;
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent transparent #FFF transparent;
+.searchBarFix {
+    width: 0px
 }
 
 .searchBackground {
@@ -26,18 +10,4 @@
     width: 650px;
     padding: 0px 20px;
     font-weight: 200;
-}
-
-.searchBarIcon {
-    margin-bottom: -7px;
-    margin-left: -7px;
-    margin-right: 7px;
-}
-
-.searchBar {
-    margin-top: -12px;
-    margin-bottom: -12px;
-    position: relative;
-    top: -2px;
-    text-align: left;
 }

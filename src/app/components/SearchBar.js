@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Search from 'material-ui/svg-icons/action/search'
 import TextField from 'material-ui/TextField';
 
+import '../../styles/SearchBar.css';
+
 const hintStyle = {
     color: "white"
 };

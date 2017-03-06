@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import SearchBar from './SearchBar'
-import UserMenu from './UserMenu';
+import UserButton from './UserButton';
 
 import '../../styles/Header.css';
 
@@ -10,7 +10,7 @@ const applicationName = "Application";
 
 class Header extends Component {
     SearchBarWithBackground (){
-        return <div style={{width: "0px"}}>
+        return <div className="searchBarFix">
                     {applicationName}
                     <div className="searchBackground">
                     <SearchBar/>
@@ -20,7 +20,7 @@ class Header extends Component {
     render() {
         return (
             <AppBar title={this.SearchBarWithBackground()}
-                    children={<UserMenu/>}
+                    children={<UserButton/>}
                 />
         );
     }

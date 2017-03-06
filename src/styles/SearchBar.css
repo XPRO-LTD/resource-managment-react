@@ -1,0 +1,14 @@
+/* github: Chestnut-Rice */
+.searchBar {
+    margin-top: -12px;
+    margin-bottom: -12px;
+    position: relative;
+    top: -2px;
+    text-align: left;
+}
+
+.searchBarIcon {
+    margin-bottom: -7px;
+    margin-left: -7px;
+    margin-right: 7px;
+}

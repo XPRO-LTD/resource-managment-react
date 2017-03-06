@@ -5,7 +5,13 @@ import Popover, {PopoverAnimationVertical} from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 
-class UserMenu extends Component {
+import '../../styles/UserButton.css';
+
+const popoverStyle = {
+    "margin-top": 12
+};
+
+class UserButton extends Component {
 
     constructor() {
         super();
@@ -32,10 +38,10 @@ class UserMenu extends Component {
     render() {
         return (
             <div>
-                <Avatar className="UserMenu" src="https://s-media-cache-ak0.pinimg.com/originals/49/5e/09/495e0997e0f0682ceca2ffedddf85e06.jpg"
+                <Avatar className="UserButton" src="https://s-media-cache-ak0.pinimg.com/originals/49/5e/09/495e0997e0f0682ceca2ffedddf85e06.jpg"
                         onClick={this.handleTouchTap}
                 />
-                <Popover style={{"margin-top": 12}} className="arrowUp"
+                <Popover style={popoverStyle} className="arrowUp"
                     open={this.state.open}
                     anchorEl={this.state.anchorEl}
                     onRequestClose={this.handleRequestClose}
@@ -50,4 +56,4 @@ class UserMenu extends Component {
     }
 }
 
-export default UserMenu;
+export default UserButton;
