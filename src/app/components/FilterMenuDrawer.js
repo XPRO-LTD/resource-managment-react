@@ -8,94 +8,64 @@ import IconButton from "material-ui/IconButton";
 import MenuItem from "material-ui/MenuItem";
 import {List, ListItem} from 'material-ui/List';
 import Subheader from "material-ui/Subheader";
-import SelectField from "material-ui/SelectField";
-import Star from "material-ui/svg-icons/toggle/star";
+import Chip from "material-ui/Chip";
+import Add from "material-ui/svg-icons/content/add";
+import KeyboardArrowRight from "material-ui/svg-icons/hardware/keyboard-arrow-right";
 import TextField from "material-ui/TextField";
+import Tags from "./Tags";
 
 import {amber600, yellow600, grey400} from "material-ui/styles/colors";
 
-const buttonSize = '48px';
 const styles = {
     drawerStyle: {
-        top: '80px',
+        top: '65px',
         width: 'auto'
-    },
-    mediumIcon: {
-        width: buttonSize,
-        height: buttonSize,
-    },
-    medium: {
-        width: buttonSize,
-        height: buttonSize,
-        padding: '5px',
     }
 };
 
 class FilterMenuDrawer extends React.Component {
-    state = {
-        value: 1,
-        favoriteTags: [
-            "computer",
-            "mouse",
-            "keyboard"
-        ],
-        workspaces: [
-            {
-                name: "first",
-                id: 0
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            workspaces: {
+                0: {
+                    id: 0,
+                    name: "first"
+                },
+                1: {
+                    id: 1,
+                    name: "second"
+                }
             },
-            {
-                name: "second",
-                id: 1
-            },
-        ]
-    };
+            selectedWorkspace: 0
+        };
+    }
+
     handleChange = (event, index, value) => this.setState({value});
 
     render() {
         return (
             <Drawer containerStyle={styles.drawerStyle} open={this.props.showFilterMenu}>
-                <div className="filterMenuHeader">
-                    <span className="closeIcon">
-                        <IconButton iconStyle={styles.mediumIcon} style={styles.medium} tooltip="Close filter menu">
-                            <Close color={grey400} onClick={this.props.closeFilterMenu}/>
-                        </IconButton>
-                    </span>
-                </div>
-                <Divider/>
-                <div className="drawerMenu">
-                    <div className="drawerMenuGroupLabel">Workspace</div>
-                    <div className="workspaceSelector">
-                        <SelectField
-                            value={this.state.value}
-                            onChange={this.handleChange}>
-                            {this.state.workspaces.map(function (workspace) {
-                                return <MenuItem value={workspace.id} primaryText={workspace.name}/>
+                <List>
+                    <Subheader>Workspaces</Subheader>
+                    <ListItem
+                        primaryText={this.state.workspaces[this.state.selectedWorkspace].name}
+                        initiallyOpen={false}
+                        primaryTogglesNestedList={true}
+                        nestedItems=
+                            {Object.entries(this.state.workspaces).map(([id, workspace]) =>  {
+                                return (
+                                    <ListItem
+                                        key={workspace.id}
+                                        primaryText={workspace.name}
+                                        leftIcon={workspace.id == this.state.selectedWorkspace ? <KeyboardArrowRight /> : null}
+                                    />
+                                )
                             })}
-                        </SelectField>
-                    </div>
-                    <Divider/>
-                    <div className="drawerMenuGroupLabel">Tags</div>
-                    <div className="tagField">
-                        <span className="tagName">
-                            <TextField
-                                hintText="Type tag"
-                                floatingLabelText="Tag"
-                            />
-                        </span>
-                        <span className="tagFavorite">
-                            <Star color={amber600} hoverColor={yellow600}/>
-                        </span>
-                    </div>
-                    <div className="tagList">
-                        <List>
-                            <Subheader>Favorite tags</Subheader>
-                            {this.state.favoriteTags.map(function (listValue) {
-                                return <ListItem primaryText={listValue}/>
-                            })}
-                        </List>
-                    </div>
-                </div>
+                    />
+                </List>
+                <Tags></Tags>
             </Drawer>
         );
     }

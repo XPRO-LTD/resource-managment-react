@@ -1,0 +1,13 @@
+.tagInput {
+    margin: 20px;
+    background-color: rgba(0,0,0, 0.2);
+}
+
+.tagList {
+    display: flex;
+    margin: 20px;
+}
+
+.tagChip {
+    margin: 4px;
+}

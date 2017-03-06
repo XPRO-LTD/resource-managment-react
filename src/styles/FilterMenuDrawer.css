@@ -20,20 +20,3 @@
     font-weight: 500;
     float: left;
 }
-
-.tagField {
-    width: 300px;
-    padding: 5px;
-}
-
-.tagName {
-    width: 245px;
-}
-
-.tagFavorite {
-    width: 50px;
-}
-
-.drawerMenu {
-    width: auto;
-}
