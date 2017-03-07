@@ -7,14 +7,15 @@ import WorkspaceSelector from "./WorkspaceSelector";
 
 const styles = {
     drawerStyle: {
-        top: '65px'
+        top: '58px',
+        "zIndex": "1099"
     }
 };
 
 class FilterMenu extends React.Component {
     render() {
         return (
-            <Drawer width={350} containerStyle={styles.drawerStyle} open={this.props.showFilterMenu}>
+            <Drawer width={350} containerStyle={styles.drawerStyle} open={this.props.showFilterMenu} zDepth={2}>
                 <WorkspaceSelector/>
                 <Divider/>
                 <Tags/>

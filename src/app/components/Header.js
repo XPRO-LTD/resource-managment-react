@@ -25,6 +25,7 @@ class Header extends Component {
         return (
             <AppBar title={this.SearchBarWithBackground()}
                     children={ <UserButton/> }
+                    zDepth={1}
                     onLeftIconButtonTouchTap={() => {this.props.toggleFilterMenu()}}/>
         );
     }

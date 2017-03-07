@@ -19,9 +19,11 @@ class App extends Component {
             showFilterMenu: false
         };
     }
+
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
     }
+
     toggleFilterMenu() {
         this.setState({showFilterMenu: !this.state.showFilterMenu});
     }
