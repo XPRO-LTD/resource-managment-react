@@ -5,8 +5,7 @@
 import React, { Component } from 'react';
 import Avatar from 'material-ui/Avatar'
 import Popover, {PopoverAnimationVertical} from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
+import UserMenu from './UserMenu';
 
 import '../../styles/UserButton.css';
 
@@ -49,10 +48,7 @@ class UserButton extends Component {
                     anchorEl={ this.state.anchorEl }
                     onRequestClose={ this.handleRequestClose }
                     animation={ PopoverAnimationVertical }>
-                    <Menu>
-                        <MenuItem primaryText="Lorem ipsum" />
-                        <MenuItem primaryText="Sit" />
-                    </Menu>
+                    <UserMenu/>
                 </Popover>
             </div>
         );
