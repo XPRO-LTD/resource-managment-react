@@ -1,20 +1,53 @@
 import React, { Component } from 'react';
-import Paper from 'material-ui/Paper'
-import MainAreaGrouped from './MainAreaGrouped'
-import MainAreaGroupName from './MainAreaGroupName'
-import '../../styles/MainAreaGroup.css';
+
+import {Table, TableBody } from 'material-ui/Table';
+
+import createTableRow from './MainAreaItems';
+
+var  rows = [
+    {
+        avatarStyle : {
+            width: "10px"
+        },
+        Image,
+        itemNameStyle: {
+            width: "150px"
+        },
+        itemName: "First Item Name"
+    },
+    {
+        avatarStyle : {
+            width: "10px"
+        },
+        Image,
+        itemNameStyle: {
+            width: "150px"
+        },
+        itemName: "First Item Name"
+    },
+    {
+        avatarStyle : {
+            width: "10px"
+        },
+        Image,
+        itemNameStyle: {
+            width: "150px"
+        },
+        itemName: "First Item Name"
+    }
+];
 
 class MainAreaGroup extends Component {
 
     render(){
+        const MainAreaItems = rows.map(createTableRow);
         return (
-        <div className="MainAreaGroup">
-            <MainAreaGroupName groupName={"First Group"}/>
-            <Paper className="PaperWrapper">
-                <MainAreaGrouped/>
-            </Paper>
-        </div>
-    );
+            <Table>
+                <TableBody displayRowCheckbox={ false }>
+                    { MainAreaItems }
+                </TableBody>
+            </Table>
+        );
     }
 
 }

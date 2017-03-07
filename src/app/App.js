@@ -7,7 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Header from './components/Header'
 import RightNavBar from './components/RightNavBar'
-import MainAreaGroup from './components/MainAreaGroup'
+import MainArea from './components/MainArea'
 import FilterMenu from './components/FilterMenu'
 
 // Needed for onTouchTap
@@ -35,7 +35,7 @@ class App extends Component {
                 <div>
                     <div style={{'display': 'flex','height': '94vh'}}>
                         <div style={{'width': '73%'}}>
-                            <MainAreaGroup/>
+                            <MainArea/>
                         </div>
                         <div style={{'width': '27%'}}>
                             <RightNavBar/>
