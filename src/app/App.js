@@ -8,6 +8,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Header from './components/Header'
 import RightNavBar from './components/RightNavBar'
 import MainArea from './components/MainArea'
+import FilterMenu from './components/FilterMenu'
 
 // Needed for onTouchTap
 injectTapEventPlugin();
