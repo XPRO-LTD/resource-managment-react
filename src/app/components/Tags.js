@@ -6,7 +6,6 @@ import Add from "material-ui/svg-icons/content/add";
 import TextField from "material-ui/TextField";
 import Subheader from "material-ui/Subheader";
 import IconButton from "material-ui/IconButton";
-import Divider from "material-ui/Divider";
 
 
 class Tags extends React.Component {
@@ -24,16 +23,11 @@ class Tags extends React.Component {
     }
 
     handleRequestDelete(tag) {
-        alert("You clicked the delete button on tag: " + tag);
+        console.log("You clicked the delete button on tag: " + tag);
     }
 
     handleTouchTap() {
-        this.state.favoriteTags.push(this.state.tagInput);
-        console.log("added new tag: " + this.state.tagInput)
-    }
-
-    onTagInputChange(tag) {
-        this.setState({tagInput: tag})
+        console.log("added new tag: " + this.state.tagInput);
     }
 
     render() {
@@ -44,8 +38,7 @@ class Tags extends React.Component {
                     <IconButton tooltip="Add tag" onClick={() => {this.handleTouchTap()}}>
                         <Add color="white" className="addTagIcon"/>
                     </IconButton>
-                    <TextField underlineShow={false} hintText="Type tag" hintStyle={{color: "white"}} inputStyle={{width: '200px', color: 'white'}}
-                               onChange={(event, tag) => {this.onTagInputChange(tag)}}/>
+                    <TextField underlineShow={false} hintText="Type tag" hintStyle={{color: "white"}} inputStyle={{width: '200px', color: 'white'}}/>
                 </div>
                 <div className="tagList" style={{display: 'flex', flexWrap: 'wrap'}}>
                     {this.state.favoriteTags.map((tag) => {
