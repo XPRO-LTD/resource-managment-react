@@ -11,6 +11,9 @@
     cursor: pointer;
 }
 
+.UserButton:active {
+    filter: brightness(88%);
+}
 .arrowUp::after {
     content: "";
     position: absolute;
