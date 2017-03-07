@@ -7,6 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Header from './components/Header'
 import RightNavBar from './components/RightNavBar'
+import MainArea from './components/MainArea'
 import FilterMenu from './components/FilterMenu'
 
 // Needed for onTouchTap
@@ -33,9 +34,10 @@ class App extends Component {
                 <Header toggleFilterMenu={() => {this.toggleFilterMenu()}}/>
                 <div>
                     <div style={{'display': 'flex','height': '94vh'}}>
-                        <div style={{'width': '67%'}}>
+                        <div style={{'width': '73%'}}>
+                            <MainArea/>
                         </div>
-                        <div style={{'width': '33%'}}>
+                        <div style={{'width': '27%'}}>
                             <RightNavBar/>
                         </div>
                     </div>
