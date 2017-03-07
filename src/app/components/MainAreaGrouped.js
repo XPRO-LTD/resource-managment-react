@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 
 import {Table, TableBody } from 'material-ui/Table';
 
-import MainAreaItems from './MainAreaItems'
-
-import createTableRow from './MainAreaItems'
+import createTableRow from './MainAreaItems';
 
 var  rows = [
     {
