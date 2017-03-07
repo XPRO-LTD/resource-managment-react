@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
 
-import '../styles/App.css';
-import MainArea from './components/MainArea'
-
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+import Header from './components/Header'
+import RightNavBar from './components/RightNavBar'
+import MainArea from './components/MainArea'
+
 // Needed for onTouchTap
 injectTapEventPlugin();
 
 class App extends Component {
-
     getChildContext() {
         return { muiTheme: getMuiTheme(baseTheme) };
     }
 
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <h1>This is starting project!</h1>
-                </div>
-                <div className="App-intro">
-                    <MainArea/>
+            <div>
+                <Header/>
+                <div>
+                    <div style={{'display': 'flex','height': '94vh'}}>
+                        <div style={{'width': '67%'}}>
+                            <MainArea/>
+                        </div>
+                        <div style={{'width': '33%'}}>
+                            <RightNavBar/>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
@@ -32,7 +37,7 @@ class App extends Component {
 }
 
 App.childContextTypes = {
-    muiTheme: React.PropTypes.object.isRequired,
+    muiTheme: React.PropTypes.object.isRequired
 };
 
 export default App;
