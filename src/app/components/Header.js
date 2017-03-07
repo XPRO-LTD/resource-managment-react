@@ -20,12 +20,19 @@ class Header extends Component {
                     </div>
                 </div>
     }
+
     render() {
         return (
             <AppBar title={this.SearchBarWithBackground()}
-                    children={ <UserButton/> }/>
+                    children={ <UserButton/> }
+                    zDepth={1}
+                    onLeftIconButtonTouchTap={() => {this.props.toggleFilterMenu()}}/>
         );
     }
 }
+
+Header.propTypes = {
+    toggleFilterMenu: React.PropTypes.func
+};
 
 export default Header;

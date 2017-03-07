@@ -33,7 +33,7 @@ class RightNavBar extends Component {
             <Card zDepth={ 3 } open={ true } style={{ 'height':'100%' }}>
                 <AppBar
                     title={ itemName }
-                    style={{'backgroundColor': red500}}
+                    style={{'backgroundColor': red500, "zIndex": "1099"}}
                     showMenuIconButton={ false }
                     iconElementRight={ appBarContextMenu }
                 />
